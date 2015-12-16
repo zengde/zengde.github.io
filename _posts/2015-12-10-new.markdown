@@ -1,6 +1,6 @@
 ---
 layout: post
 title:  "新文章"
-date:   2015-12-10 14:24:52 +0800
-categories: zengde update
+date:   2015-12-10 16:13:52 +0800
+categories: article
 ---

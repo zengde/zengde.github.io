@@ -10,7 +10,7 @@ title: 山不辞土 故能成其高
 email: admin@zengde.net
 description: > # this means to ignore newlines until "baseurl:"
   zengde的个人博客站。内容主要以php,javascript,jquery,html,css,与IT有关文章为主。
-baseurl: "https://zengde.github.io" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://zengde.net" # the base hostname & protocol for your site
 twitter_username: zengde
 github_username:  zengde
