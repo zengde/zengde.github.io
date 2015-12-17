@@ -12,3 +12,5 @@ github for windows
 [https://www.elastic.co](https://www.elastic.co)    
 [https://developer.mozilla.org](https://developer.mozilla.org)   
 [https://download-installer.cdn.mozilla.net](https://download-installer.cdn.mozilla.net)      
+[https://angular.io/](https://angular.io/)  
+http://www.w3schools.com/    
