@@ -13,4 +13,6 @@ github for windows
 [https://developer.mozilla.org](https://developer.mozilla.org)   
 [https://download-installer.cdn.mozilla.net](https://download-installer.cdn.mozilla.net)      
 [https://angular.io/](https://angular.io/)  
-http://www.w3schools.com/    
+http://www.w3schools.com/   
+https://www.xvid.com/  
+https://raw.githubusercontent.com需要刷新n次    
