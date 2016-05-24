@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div id="index" class="bs">
+    <h1 class="h4">归档</h1>
+    <div id="list" class="category">
+        <p class="date"><strong></strong>目前共有文章：{{ site.posts.size }}   </p>
+        <div class="car-container car-collapse">
+            <a href="#" class="car-toggler">展开所有月份</a>
+
+            <ul id="car-list">
+                {% for post in site.posts %}
+                    {% capture this_month %}{{ post.date | date: "%Y 年 %m 月" }}{% endcapture %}
+                    {% capture next_month %}{{ post.previous.date | date: "%Y 年 %m 月" }}{% endcapture %}
+                  
+                    {% if forloop.first %}
+                    <li><span class="car-yearmonth" data-uk-sticky="{boundary: true}">+ {{ this_month }} </span>
+                        <ul class='car-monthlisting'>
+                    {% endif %}
+                        <li>{{ post.date | date: "%d日" }}: <a target="_blank" href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% if forloop.last %}
+                        </ul>
+                    </li>
+                    {% else %}
+                        {% if this_month != next_month %}
+                        </ul></li>
+                        <li><span class="car-yearmonth" data-uk-sticky="{boundary: true}">+ {{ next_month }} </span>
+                        <ul class='car-monthlisting'>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

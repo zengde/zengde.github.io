@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html>
+    {% include head.html %}
+    <body>
+        <div id="main" class="wp uk-grid uk-grid-collapse" style="max-width:960px">
+            <div class="uk-width-small-1-1 uk-width-medium-1-4 uk-width-large-1-5">
+                <div id="head"  data-uk-sticky="{boundary: true,top:80}" >
+                    <div id="op_head">
 
-  {% include head.html %}
+                        <div class="uk-panel" id="op_hed">
+                            <div class="tx">
+                                <img src="{{ "/assets/img/avatar.jpg" | prepend: site.baseurl }}" />
+                            </div>
+                            <h1 class="uk-panel-title"><a href="{{ "/" | prepend: site.baseurl }}">zengde</a></h1>
+                            <span></span>
+                            <div class="my uk-grid-collapse uk-grid uk-grid-width-1-3">
+                                <div>   
+                                    <span>{{ site.posts.size }}</span>
+                                    <span><i class="uk-icon-file-text"></i></span>
+                                    <a href="{{ "/archive" | prepend: site.baseurl }}" title="文章" data-uk-tooltip="{pos:'bottom'}"></a>
+                                </div>
+                                <div>
+                                    <span>{{ site.categories.size }}</span>
+                                    <span><i class="uk-icon-folder"></i></span>
+                                    <a href="{{ "/categories" | prepend: site.baseurl }}" title="分类" data-uk-tooltip="{pos:'bottom'}"></a>
+                                </div>
+                                <div>
+                                    <span>{{ site.tags.size }}</span>
+                                    <span><i class="uk-icon-tags"></i></span>
+                                    <a href="{{ "/tags" | prepend: site.baseurl }}" title="标签" data-uk-tooltip="{pos:'bottom'}"></a>                                      
+                                </div>
+                            </div>
+                            <a href="#s_s" class="s_s uk-navbar-toggle uk-hidden-large " data-uk-offcanvas></a>
+                            <ul id="nav-top" class="nav uk-nav uk-hidden-small">
+                                <li id="menu-item-5" class=" uk-active"><a href="/">首页</a></li>
+                                <li id="menu-item-54" class="uk-parent" data-uk-dropdown="{pos:'right-top'}" aria-haspopup="true" aria-expanded="false"><a href="#">页面</a>
+                                    <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-right" style="top: -163px; left: 187px;"> <ul class="uk-nav uk-nav-navbar">
+                                           <li id="menu-item-55" class="uk-active"><a href="/messages.html">留言板</a></li>
+                                           <li id="menu-item-58" class=""><a href="/archive.html">归档</a></li>
+                                           <li id="menu-item-56" class=""><a href="/tags.html">标签</a></li>
+                                           <li id="menu-item-57" class=""><a href="/categories.html">分类</a></li>
+                                   </ul></div>
+                                </li>
+                                {% for my_page in site.pages %}
+                                    {% if my_page.title %}
+                                    <li id="menu-item-598" class="" ><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            {% include search_box.html %}
+                        </div>
+                    </div>
+                    <div class="ft uk-hidden-small">
+                        <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+                    </div>
 
-  <body>
 
-    {% include header.html %}
+                </div>		
+            </div>
+            <div id="content" class="uk-width-small-1-1 uk-width-medium-3-4 uk-width-large-4-5 uk-grid uk-grid-collapse">
+                <div  class=" uk-width-1-1">
+                {{ content }}
+                <div class="ft uk-visible-small">
+                    <p><a href="#my-link" data-uk-modal>友情链接</a> </p>
+                </div>
+                </div>
+            </div>  
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
+        </div>
+        
     {% include footer.html %}
-
-  </body>
-
+    </body>
 </html>

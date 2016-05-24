@@ -4,8 +4,6 @@ title:  "被墙的技术相关的网站"
 date:   2015-12-16 10:51:52 +0800
 categories: article
 ---
-魔爪已伸向程序员们，收集日常碰到的,不间断更新。   
-^(http.+)$ -> [\1]\(\1\)    
 
 github for windows      
 [http://git-scm.com/](http://git-scm.com/)      
@@ -16,3 +14,4 @@ github for windows
 http://www.w3schools.com/   
 https://www.xvid.com/  
 https://raw.githubusercontent.com需要刷新n次    
+gem无法下载需更换为国内镜像

@@ -2,23 +2,33 @@
 layout: default
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">文章</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%m/%d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-		<p>{{ post.excerpt }}</p>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">订阅 <a href="{{ "/feed.xml" | prepend: site.baseurl }}"> RSS</a></p>
-
+<div id="index" class="bs">
+    <h4>最新文章</h4>
+    <div id="list">
+        {% for post in site.posts %}
+        <article class="article">
+            <h1><a href="{{ post.url | prepend: site.baseurl }}" >{{ post.title }}</a></h1>
+            <p>{{ post.excerpt }}<time><br>{{ post.date | date: "%Y年%m月%d日" }}</time></p>
+        </article>
+        {% endfor %}
+    </div>
 </div>
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<ul class="uk-pagination">
+    {% if paginator.previous_page %}
+    <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous">«</a></li>
+    {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <li class='uk-active' ><span>{{ page }}</span></li>
+    {% else %}
+    <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+    <li><a href="{{ paginator.next_page_path }}" class="next">»</a></li>
+    {% endif %}
+</ul>
+{% endif %}

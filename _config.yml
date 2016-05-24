@@ -17,4 +17,9 @@ github_username:  zengde
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
+
+# Needed for backward compatibility
+gems: [jekyll-paginate]
+paginate: 10
+exclude: ["nbproject"]

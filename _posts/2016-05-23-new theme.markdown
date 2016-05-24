@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "博客更换新的主题"
+date:   2016-05-23 18:33:52 +0800
+categories: article
+tags: ["new"]
+---
+博客更换新的主题

@@ -1,3 +1,3 @@
-source 'https://ruby.taobao.org'
-
-gem 'pygments.rb'
+source 'http://gems.ruby-china.org'
+gem 'jekyll'
+gem 'jekyll-paginate'

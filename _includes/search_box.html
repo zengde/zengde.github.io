@@ -1,0 +1,45 @@
+<form class="uk-form uk-hidden-small" id="searchform" method="get" action="/feed.xml">
+    <input class="uk-width-1-1 " type="text" value="" name="query" id="query" placeholder="正则搜索" />
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#searchform').submit(function () {
+            $('#query').blur().attr('disabled', true);
+            $('#content').append(ajaxloading_code);
+            $("#index").children().fadeTo("slow",
+                    0, function () {}
+            );
+            $('#content').fadeTo("slow", 1, function () {
+                $('#content').fadeIn("slow", function () {
+                    $.ajax({url: '/atom.xml?r=' + (Math.random() * 999999), dataType: 'xml', success: function (data) {
+                            var rq = new RegExp($('#query').val(), 'im');
+                            var rl = /\/([^\/]+)\.html$/;
+                            var html = '<div class=" uk-width-1-1"><div id="index" class="bs"><h4>搜索</h4><div id="list">';
+                            $(data).find('entry').each(function (index, entry) {
+                                var title = $(entry).find('title').text();
+                                var link = $(entry).find('link').attr('href');
+                                var title_en = rl.exec(link)[1].replace('-', ' ');
+                                var content = $(entry).find('content').text();
+                                if (rq.test(title) || rq.test(title_en) || rq.test(content)) {
+                                    var parts = $(entry).find('updated').text().split(/[-T:+]/g);
+                                    date = parts[0]+'年'+parts[1]+'月'+parts[2] + '日';
+                                    html += '<article class="article">';
+                                    html += '<h1><a href="' + link + '">' + title + '</a></h1>';
+                                    html += '<p>' + content;
+                                    html += '<time><br>' + date + '</time></p>';
+                                    html += '</article>';
+                                }
+                            });
+                            html+="</div></div></div>";
+                            $('#content').html(html);
+                            $('#content').show();
+                            $("#index").children().hide();
+                            $("#index").children().fadeIn()
+                        }});
+                })
+            })
+            $('#query').blur().attr('disabled', false);
+            return false;
+        });
+    });
+</script>

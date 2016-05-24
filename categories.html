@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div id="index" class="bs">
+    <h1 class="h4">分类</h1>
+    <div id="list" class="category">
+    <p class="date"><strong></strong>目前共有分类：{{ site.categories.size }}   </p>
+    {% for my_cat in site.categories %}
+        <a href="">{{ my_cat | first | capitalize }} ({{ my_cat | last | size }})</a>
+    {% endfor %} 
+    </div>
+</div>

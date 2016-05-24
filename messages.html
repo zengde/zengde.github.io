@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div id="index" class="bs">
+    <article id="article" class="uk-article" style="display: block;">
+	<h1 class="uk-article-title">留言板</h1>
+	<p>欢迎访问我的博客，你可以在下面留下你的足迹。^_^</p>
+    </article>
+    <div id="qzhai_comments">
+        <h4>评论</h4>
+
+        <div id="respond" class="comment_form" role="form">
+            <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="留言板" data-title="留言板" data-url="{{ page.url }}"></div>
+            <!-- 多说评论框 end -->
+            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name: "zengde"};
+                (function () {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!-- 多说公共JS代码 end -->
+        </div>
+        
+        <!-- Comment Form -->
+    </div>
+</div>
