@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" style='font-size:14px;' xmlns:youxiji>
+
+<head>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Add this to <head> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+
+	<!-- Add this after vue.js 
+<script src="https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js"></script>x
+<script src="https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+-->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/babel-polyfill@6.26.0/dist/polyfill.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-vue@2.0.0-rc.11/dist/bootstrap-vue.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+	<div id="app">
+		<b-navbar toggleable="md" type="light" variant="light">
+			<b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+			<b-navbar-brand :to="{name:'home'}"><i class="fa fa-home"></i> zengde vue</b-navbar-brand>
+			<b-collapse is-nav id="nav_collapse">
+				<b-navbar-nav>
+					<b-nav-item-dropdown>
+						<template slot="button-content">
+							组件
+						</template>
+						<b-dropdown-item :to="{name:'tree'}">vue-tree树</b-dropdown-item>
+						<b-dropdown-item :to="{name:'upload'}">vue-upload上传</b-dropdown-item>
+						<b-dropdown-item :to="{name:'area'}">vue-area地区选择</b-dropdown-item>
+					</b-nav-item-dropdown>
+					<b-nav-item-dropdown text="其他">
+						<b-dropdown-item :to="{name:'help'}">助手函数</b-dropdown-item>
+					</b-nav-item-dropdown>
+				</b-navbar-nav>
+
+			</b-collapse>
+		</b-navbar>
+
+		<b-container fluid class='mt-2'>
+			<b-row>
+				<b-col md="3">
+					<b-card>
+						<b-nav-text>组件</b-nav-text>
+						<b-nav pills vertical>
+							<b-nav-item :to="{name:'tree'}">vue-tree树</b-nav-item>
+							<b-nav-item :to="{name:'upload'}">vue-upload上传</b-nav-item>
+							<b-nav-item :to="{name:'area'}">vue-area地区选择</b-nav-item>
+						</b-nav>
+					</b-card>
+					<b-card>
+						<b-nav-text>其他</b-nav-text>
+						<b-nav pills vertical>
+							<b-nav-item :to="{name:'help'}">助手函数</b-nav-item>
+						</b-nav>
+					</b-card>
+				</b-col>
+				<b-col md='9'>
+					<transition name="fade">
+						<router-view :key="$route.fullPath"></router-view>
+					</transition>
+				</b-col>
+			</b-row>
+		</b-container>
+
+		
+	</div>
+	<script>
+		Vue.prototype.$http = axios;
+	</script>
+	<link rel="stylesheet" href="app.css?v3" />
+	<script src='app.js?v8'></script>
+
+	<script src='store.js?v2'></script>
+
+	<script src='http://pv.sohu.com/cityjson?ie=utf-8' type='text/javascript'></script>
+	<script src='route.js?v25'></script>
+	<script src='main.js?v8'></script>
+</body>
+
+</html>

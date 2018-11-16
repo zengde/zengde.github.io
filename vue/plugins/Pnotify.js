@@ -1,0 +1,11 @@
+import PNotify from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotify.js";
+//import PNotifyAnimate from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyAnimate.js";
+//import PNotifyButtons from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyButtons.js";
+//import PNotifyCallbacks from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyCallbacks.js";
+//import PNotifyConfirm from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyConfirm.js";
+//import PNotifyDesktop from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyDesktop.js";
+//import PNotifyHistory from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyHistory.js";
+//import PNotifyMobile from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyMobile.js";
+//import PNotifyNonBlock from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyNonBlock.js";
+//import PNotifyStyleMaterial from"https://cdn.jsdelivr.net/npm/pnotify@4.0.0-alpha.4/dist/es/PNotifyStyleMaterial.js";
+export default PNotify;
