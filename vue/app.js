@@ -9,6 +9,19 @@ async function loadStyles(stylesheets) {
     document.head.appendChild(style);
     // Do whatever now
 }
+function LoadCSS( cssURL ) {
+    // 'cssURL' is the stylesheet's URL, i.e. /css/styles.css
+    return new Promise( function( resolve, reject ) {
+        var link = document.createElement( 'link' );
+        link.rel  = 'stylesheet';
+        link.href = cssURL;
+        document.head.appendChild( link );
+        link.onload = function() { 
+            resolve(); 
+            console.log( 'CSS has loaded!' ); 
+        };
+    } );
+}
 function uSwal(...arguments){
     return import(Base+'plugins/sweetalert2-7.24.3/dist/sweetalert2.all.min.js')
     .then(module => {

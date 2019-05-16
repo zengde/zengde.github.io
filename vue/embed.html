@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:youxiji>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+        <style>
+            body{margin: 0;padding: 0;}
+            .bg-dark{background: #000;}
+        </style>
+    </head>
+    <body class="bg-dark">
+        <div id="app">
+            <Xgplayer :config="config" @player="Player = $event"/>
+        </div>
+        <script>
+            const app = new Vue({
+                components:{
+                    Xgplayer: () => import('./plugins/xgplayer/xgplayer.js'),
+                },
+                data:{
+                    config: {
+                        id: 'vs',
+                        //fluid: true,
+                        autoplay: true,
+                        url:'http://h5player.bytedance.com/video/mp4/xgplayer-demo-720p.mp4',
+						poster:'//s2.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.0/poster.jpg',
+                        playbackRate: [0.5, 0.75, 1, 1.5, 2],
+                        download: true,
+                        screenShot: true,
+                        height: window.innerHeight*0.99,
+                        width: window.innerWidth*0.99,
+                    },
+                    Player: null,
+                    initPlayer:false
+                },
+                created(){
+                    
+                },
+                methods:{
+				
+                }
+            }).$mount('#app')
+        </script>
+    </body>

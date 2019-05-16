@@ -4,6 +4,8 @@ const Tree=() => import(Base+'page/tree.js');
 const Upload=() => import(Base+'page/upload.js');
 const Area=() => import(Base+'page/area.js');
 const Help=() => import(Base+'page/help.js');
+const lightBox=() => import(Base+'page/lightBox.js');
+const lightGallery=() => import(Base+'page/lightGallery.js');
 
 const routes = [
   { path: '*',name:'404', component: NotFound },
@@ -12,6 +14,8 @@ const routes = [
   { path: '/upload',name:'upload', component: Upload,meta:{title:'vue-upload 上传组件'} },
   { path: '/area',name:'area', component: Area,meta:{title:'vue-area 地区选择组件'} },
   { path: '/help',name:'help', component: Help,meta:{title:'助手函数'} },
+  { path: '/lightBox',name:'lightBox', component: lightBox,meta:{title:'lightBox'} },
+  { path: '/lightGallery',name:'lightGallery', component: lightGallery,meta:{title:'lightGallery'} },
 ]
 //懒加载 component: (resolve) => require(['./views/index.vue'], resolve)
 
